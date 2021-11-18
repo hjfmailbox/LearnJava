@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册</title>
+</head>
+<body>
+
+<h1>注册</h1>
+
+<!--特殊作用属性
+disable：禁用
+hidden：隐藏
+readonly：只读
+-->
+
+<!--表单form
+action：表单提交的位置，可以是网站，也可以是请求处理地址
+method：post，get提交方式
+   get方式提交：url包含提交的信息，不安全，高效，调试用
+   post：url包含提交的信息，比较安全，传输大文件
+-->
+<form action="1.我的第一个网页.html" method="get">
+    <!--文本输入框：input type="text"
+    value：文本框初始值
+    maxlength：文本最大长度
+    size：文本框长度
+    -->
+    <p>名字：<input type="text" name="username" value="坑货" maxlength="8" size="30"></input></p>
+
+    <!--密码框：input type="password"-->
+    <p>密码：<input type="password" name="password" ></input></p>
+
+
+    <!--单选框标签
+    input type="radio"
+    value：提交时的值，必填否则值为on
+    name：表示组，同一组的input只能选一个
+    checked：默认选中
+    -->
+    <p>性别：
+        <input type="radio" value="boy" name="sex"/>男
+        <input type="radio" value="girl" name="sex" checked/>女
+        <input type="radio" value="hermaphrodite" name="sex2"/>人妖
+    </p>
+
+    <!--多选框标签
+    input type="checkbox"
+    value：提交时的值，必填否则值为on
+    name：表示组，同一组的input只能选一个
+    checked：默认选中
+    -->
+    <p>爱好：
+        <input type="checkbox" value="sleep" name="hobby"/>睡觉
+        <input type="checkbox" value="code" name="hobby"/>编码
+        <input type="checkbox" value="chat" name="hobby"/>聊天
+        <input type="checkbox" value="game" name="hobby"/>游戏
+        <input type="checkbox" value="girl" name="hobby" checked/>女孩
+    </p>
+
+    <!--按钮
+    input type="button" 普通按钮
+    input type="button" 图片按钮，具有submit的action
+    -->
+    <p>按钮：
+        <input type="button" name="btn1" value="点击变长" onclick="alert('哈哈，并没啥反应！')"/>
+        <br/>
+
+        <input type="image" src="/images/1.jpeg"/>
+    </p>
+
+    <!--下拉框/列表框
+    select
+    selected：默认选中
+    -->
+    <p>国家：
+        <select name="列表名称" >
+            <option value="china">中国</option>
+            <option value="usa">美国</option>
+            <option value="eth" selected>瑞士</option>
+            <option value="athree">印度</option>
+        </select>
+    </p>
+
+    <!--文本域
+    cols：列数
+    rows：行数
+    -->
+    <p>反馈：
+        <textarea name="textarea" cols="30" rows="10">文本内容</textarea>
+    </p>
+
+    <!--文件域
+    input type="file"
+    -->
+    <p>
+        <input type="file" name="files"/>
+        <br>
+        <input type="button" name="upload" value="上传">
+    </p>
+
+    <!--邮箱(带验证逻辑)
+    input type="email"
+    简易校验逻辑
+            √
+    hjf     ×
+    hjf@    ×
+    @hjf    ×
+    hjf@hjf √
+    -->
+    <p>邮箱：
+        <input type="email" name="email">
+    </p>
+
+    <!--url(带验证逻辑)
+    input type="url"
+    -->
+    <p>Url：
+        <input type="url" name="url">
+    </p>
+
+    <!--数字(带验证逻辑)
+    input type="number"
+    min：最小值
+    max：最大值
+    step：步长
+    -->
+    <p>商品数量：
+        <input type="number" name="num" min="0" max="100" step="2">
+    </p>
+
+    <!--滑块
+    input type="range"
+    min：最小值
+    max：最大值
+    step：步长
+    -->
+    <p>音量：
+        <input type="range" name="volume" min="0" max="100" step="10">
+    </p>
+
+    <!--搜索框
+    input type="search"
+    -->
+    <p>搜索：
+        <input type="search" name="search" id="search">
+    </p>
+
+    <!--增强鼠标可用
+    for：焦点移到指定id的标签
+    -->
+    <p>
+        <label for="search">点这里试试</label>
+        <input type="text" name="test"/>
+    </p>
+
+    <!--特殊按钮
+    input type="submit" 表单提交按钮，按钮默认文字(中文) 提交
+    input type="reset"  表单重置按钮，按钮默认文字(中文) 重置
+    value可修改按钮默认文字
+    -->
+    <p>
+        <input type="submit" name="submit" value="提交1">
+        <input type="reset" name="reset" value="重置1">
+    </p>
+
+</form>
+
+</body>
+</html>
