@@ -25,12 +25,24 @@ method：post，get提交方式
     value：文本框初始值
     maxlength：文本最大长度
     size：文本框长度
+    placeholder：提示信息
+    required：必填，不能为空
+    pattern：需要符合的正则表达式，不带/
     -->
-    <p>名字：<input type="text" name="username" value="坑货" maxlength="8" size="30"></input></p>
+    <p>名字：
+        <input type="text" name="username" value="坑货" maxlength="8" size="30"></input>
+    </p>
+    <p>昵称：
+        <input type="text" name="nickname" maxlength="8" size="30" placeholder="请输入昵称" required></input>
+    </p>
+    <p>自定义邮箱验证：
+        <input type="text" name="custom-email" size="30" placeholder="请输入邮箱" pattern="^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$"></input>
+    </p>
 
     <!--密码框：input type="password"-->
-    <p>密码：<input type="password" name="password" ></input></p>
-
+    <p>密码：
+        <input type="password" name="password" ></input>
+    </p>
 
     <!--单选框标签
     input type="radio"
