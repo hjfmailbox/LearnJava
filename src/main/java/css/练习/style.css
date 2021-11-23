@@ -1,0 +1,33 @@
+#box{
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    border: 3px solid red;
+}
+
+a{
+    height: 100px;
+    width: 100px;
+    text-decoration: none;
+    background-color: #ffa1f2;
+    line-height: 100px;
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+a:hover{
+    background-color: blue;
+}
+
+.a2, .a4{
+    position: relative;
+    left: 200px;
+    top: -100px;
+}
+
+.a5{
+    position: relative;
+    left: 100px;
+    top: -300px;
+}
