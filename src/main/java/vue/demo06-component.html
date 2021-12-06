@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-component</title>
+</head>
+<body>
+
+<div id="app">
+    <my-component v-for="item in items" v-bind:hobby="item"></my-component>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component("my-component", {
+        props: [ 'hobby' ],//注意,默认规则下，此处不能有大写字母
+        template: '<li>I like {{hobby}}!</li>'
+    });
+
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            items: [
+                "java",
+                "c++",
+                "c#",
+            ]
+        }
+    });
+</script>
+
+</body>
+</html>
