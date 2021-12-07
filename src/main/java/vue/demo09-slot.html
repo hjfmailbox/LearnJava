@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-slot</title>
+</head>
+<body>
+
+<div id="app">
+    <todo>
+        <todo-title slot="todo-title1" :title="tip_title"></todo-title>
+        <todo-items slot="todo-items2" v-for="(book, index1) in book_names" :item="book"
+                    v-on:remove="removeItem" :index_component="index1"></todo-items>
+    </todo>
+</div>
+
+<script src="vue.js"></script>
+<script src="axios.min.js"></script>
+
+<script>
+    Vue.component("todo",{
+        template: `
+                    <div>
+                        <slot name="todo-title1"></slot>
+                        <ul>
+                            <slot name="todo-items2"></slot>
+                        </ul>
+                    </div>
+                  `
+    });
+
+    Vue.component("todo-title",{
+        props: ['title'],
+        template: '<div>{{title}}</div>'
+    });
+
+    Vue.component("todo-items",{
+        props: ['item','index_component'],
+        template: '<li>{{index_component}}---{{item}} <button @click="remove(index_component)">删除</button></li>',
+        methods: {
+            remove: function (para){
+                this.$emit("remove", para);
+            }
+        }
+    });
+
+
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            tip_title: '书籍列表',
+            book_names: [
+                'java',
+                'c#',
+                'python'
+            ],
+        },
+        methods: {
+            removeItem: function (index){
+                this.book_names.splice(index,1);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
